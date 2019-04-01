@@ -1,0 +1,195 @@
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
+}
+.hovedfelt{
+  display: flex;
+  flex-direction: row;
+}
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+#felt{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 75%;
+}
+h5{
+  color: #35424a;
+}
+#handleKurvFelt{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  align-items: center;
+  width: 25%;
+}
+.fruktdiv{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 5px 2px;
+  padding: 5px 10px;
+}
+ul{
+  margin:0;
+  padding:0;
+}
+.etFelt{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+select, input{
+  height: 38px;
+  background:rgb(110,190,68);
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+  padding: 0;
+  margin: 7px 10px;
+}
+.knapp{
+  height:38px;
+  background:rgb(236,100,36);
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+}
+.gronnKnapp{
+  height:38px;
+  background:rgb(110,190,68);
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.wrap{
+  margin: 25px 20px;
+}
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:70px;
+  border-bottom:rgb(236,100,36) 3px solid;
+}
+
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+}
+
+header li{
+  float:left;
+  display:inline;
+  padding: 0 20px 0 20px;
+}
+
+header #logo{
+  float:left;
+}
+
+header #logo h1{
+  margin:0;
+}
+
+header nav{
+  float:right;
+  margin-top:10px;
+}
+
+header .farge, header, .farge a{
+  color:rgb(236,100,36);
+  font-weight:bold;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+}
+
+#bilde{
+  min-height: 400px;
+  background:url('../img/bakgrunn.jpg');
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align:center;
+  color:#ffffff;
+}
+
+#bilde h1{
+  margin-top:100px;
+  font-size:55px;
+  margin-bottom:10px;
+}
+
+#bilde p{
+  font-size:20px;
+}
+
+#underOverskrift{
+  padding:15px;
+  color:#ffffff;
+  background:#35424a
+}
+
+#underOverskrift h1{
+  text-align: center;
+}
+
+footer{
+  padding:20px;
+  margin-top:20px;
+  color:#ffffff;
+  background-color:rgb(236,100,36);
+  text-align: center;
+}
+
+#video{
+  padding: 25px 50px;
+  display: block;
+  margin: 0 auto;
+}
+@media(max-width: 768px){
+  header #logo,
+  header nav,
+  header nav li,
+  #underOverskrift h1,
+  {
+    float:none;
+    text-align:center;
+    width:100%;
+  }
+
+  header{
+    padding-bottom:20px;
+  }
+
+  #bilde h1{
+    margin-top:40px;
+  }
+
+  #underOverskrift button{
+    display:block;
+    width:100%;
+  }

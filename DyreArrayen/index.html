@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <style media="screen">
+        *{
+          padding:0px;
+          margin:0px;
+          font-family: "Century Gothic", "Arial";
+        }
+        .innpakning{
+          width: 560px;
+          min-height: 100px;
+          background-color: lightblue;
+          margin:auto;
+          border-radius: 20px;
+          padding:20px;
+        }
+        select{
+            padding:5px;
+            border: none;
+            font-size:15px;
+            min-width: 130px;
+            border-radius: 10px;
+        }
+        button{
+          padding: 7px;
+          background-color: rgb(60, 123, 149);
+          color: white;
+          border:none;
+          cursor: pointer;
+          border-radius: 10px;
+          width:100px;
+        }
+        option{
+          background-color: lightyellow;
+        }
+        .tekst{
+          display: flex;
+          width: inherit;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+      </style>
+      <title></title>
+    </head>
+    <body>
+      <div class="innpakning">
+          <select id="dyr">
+            <!-- Menyen fylles fra scriptet-->
+          </select>
+          <button type="button" id="knapp">Velg dyr</button>
+            <br><br>
+            <hr>
+          <strong>Antall dyr:</strong>
+          <p id="dyreliste"></p>
+      </div>
+
+  <script type="text/javascript">
+    var menyEl = document.querySelector("#dyr");
+    var knappEl = document.querySelector("#knapp");
+    var dyreTxt = document.querySelector("#dyreliste");
+
+    var dyr = [
+      {type:"Hund",formengde:1.5,antall:0},
+      {type:"Katt",formengde:0.7,antall:0},
+      {type:"Fugl",formengde:0.1,antall:0},
+      {type:"Minigris",formengde:3.5,antall:0},
+      {type:"Slange",formengde:0.3,antall:0},
+      {type:"Hamster",formengde:0.15,antall:0},
+      {type:"Kanin",formengde:1.1,antall:0}
+    ];
+
+    for (var i = 0; i < dyr.length; i++) {
+      var nyOpt = document.createElement("option");
+      nyOpt.innerHTML = dyr[i].type;
+      nyOpt.value = i;
+      menyEl.appendChild(nyOpt);
+    }
+
+    knappEl.addEventListener("click", sablaBra);
+
+    function sablaBra(){
+    var totMengde = 0;
+    var tottotMengde = 0;
+  	var dyreNr = menyEl.value;
+    dyreTxt.innerHTML = "";
+  	dyr[dyreNr].antall++;
+    for (var i = 0; i < dyr.length; i++) {
+      if (dyr[i].antall > 0) {
+        totMengde = dyr[i].antall*dyr[i].formengde;
+        tottotMengde += totMengde;
+        dyreTxt.innerHTML += dyr[i].type +"    "+dyr[i].antall+" stk       formengde: "+totMengde.toFixed(2)+"<br>";
+      }
+    }
+    dyreTxt.innerHTML += "Total:";
+    dyreTxt.innerHTML += tottotMengde.toFixed(2);
+    }
+  </script>
+
+  </body>
+</html>
